@@ -3,7 +3,7 @@
 # Requires: jq. Optional: shellcheck, claude (each check is skipped if its tool is missing,
 # unless STRICT_TOOLS=1, which CI sets).
 set -uo pipefail
-cd "$(dirname "$0")/.."
+cd "$(dirname "$0")/.." || exit 1
 
 fail=0 mark=0
 err()  { echo "✘ $*" >&2; fail=$((fail+1)); }
@@ -52,6 +52,7 @@ for dir in plugins/*/; do
       f="$dir$rel"
       [ -f "$f" ] || { err "$name: hook references missing file $rel"; continue; }
       [ -x "$f" ] || err "$name: hook script $rel is not executable"
+    # shellcheck disable=SC2016  # literal ${CLAUDE_PLUGIN_ROOT}, not an expansion
     done < <(jq -r '.. | .command? // empty' "$hj" | grep -o '\${CLAUDE_PLUGIN_ROOT}/[^"'\'' ]*' | sed 's|^\${CLAUDE_PLUGIN_ROOT}/||')
   fi
 done
@@ -73,4 +74,9 @@ if need claude; then
   ok "claude plugin validate --strict"
 fi
 
-[ "$fail" = 0 ] && echo "All checks passed." || { echo "$fail check(s) failed." >&2; exit 1; }
+if [ "$fail" = 0 ]; then
+  echo "All checks passed."
+else
+  echo "$fail check(s) failed." >&2
+  exit 1
+fi
