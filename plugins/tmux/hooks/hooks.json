@@ -1,0 +1,15 @@
+{
+  "description": "Set the @claude_session pane option on session start",
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"${CLAUDE_PLUGIN_ROOT}/hooks/tmux-tag-session.sh\""
+          }
+        ]
+      }
+    ]
+  }
+}

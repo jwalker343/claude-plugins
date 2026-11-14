@@ -1,0 +1,16 @@
+{
+  "name": "my-plugins",
+  "owner": {
+    "name": "Johnny Walker"
+  },
+  "metadata": {
+    "description": "Personal Claude Code plugins, shared across machines"
+  },
+  "plugins": [
+    {
+      "name": "tmux",
+      "source": "./plugins/tmux",
+      "description": "Tags the tmux pane with the Claude session id (@claude_session) so tmux can fork the session"
+    }
+  ]
+}

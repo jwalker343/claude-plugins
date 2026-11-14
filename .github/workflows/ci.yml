@@ -1,0 +1,32 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      # Only used for `claude plugin validate`, which needs no API key.
+      - name: Install Claude Code
+        run: npm install -g @anthropic-ai/claude-code
+
+      # jq and shellcheck ship with ubuntu-latest. STRICT_TOOLS=1 makes a missing tool fail
+      # instead of being skipped.
+      - name: Repo checks
+        run: ./scripts/check.sh
+        env:
+          STRICT_TOOLS: "1"
+          DISABLE_AUTOUPDATER: "1"
