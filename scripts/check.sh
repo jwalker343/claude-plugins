@@ -48,11 +48,11 @@ for dir in plugins/*/; do
   # Hook commands that reference ${CLAUDE_PLUGIN_ROOT}/... must point at executable files
   hj="${dir}hooks/hooks.json"
   if [ -f "$hj" ]; then
+    # shellcheck disable=SC2016  # literal ${CLAUDE_PLUGIN_ROOT}, not an expansion
     while IFS= read -r rel; do
       f="$dir$rel"
       [ -f "$f" ] || { err "$name: hook references missing file $rel"; continue; }
       [ -x "$f" ] || err "$name: hook script $rel is not executable"
-    # shellcheck disable=SC2016  # literal ${CLAUDE_PLUGIN_ROOT}, not an expansion
     done < <(jq -r '.. | .command? // empty' "$hj" | grep -o '\${CLAUDE_PLUGIN_ROOT}/[^"'\'' ]*' | sed 's|^\${CLAUDE_PLUGIN_ROOT}/||')
   fi
 done
