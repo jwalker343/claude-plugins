@@ -8,9 +8,19 @@
   },
   "plugins": [
     {
+      "name": "optimize-prompt",
+      "source": "./plugins/optimize-prompt",
+      "description": "Rewrites a rough prompt into a Claude Code-optimized prompt grounded in the codebase (/optimize-prompt)"
+    },
+    {
       "name": "tmux",
       "source": "./plugins/tmux",
       "description": "Tags the tmux pane with the Claude session id (@claude_session) so tmux can fork the session"
+    },
+    {
+      "name": "wsl-notify",
+      "source": "./plugins/wsl-notify",
+      "description": "WSL2 + Windows Terminal notifications: tab title, bell and toast when Claude needs you, with an optional title flasher"
     }
   ]
 }

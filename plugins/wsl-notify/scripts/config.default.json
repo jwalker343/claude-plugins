@@ -1,0 +1,16 @@
+{
+  "restingTitleFormat": "{dir}",
+  "attentionLabel": "(!) Claude needs you",
+  "enableOsc9Toast": true,
+  "enablePowershellToast": true,
+  "enableFlasher": true,
+  "flashInterval": 1,
+  "flashMaxSeconds": 60,
+  "enableDoneToast": true,
+  "enableDoneBell": true,
+  "enableDoneTitle": false,
+  "doneLabel": "✓ Claude done",
+  "doneToastBody": "Task complete — your turn",
+  "powershellPath": "/mnt/c/Windows/System32/WindowsPowerShell/v1.0/powershell.exe",
+  "logPath": "/tmp/claude-wsl-notify.log"
+}

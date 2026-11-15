@@ -1,0 +1,15 @@
+{
+  "name": "wsl-notify",
+  "version": "1.0.0",
+  "description": "WSL2 + Windows Terminal notifications: tab title, bell and toast when Claude needs you, with an optional title flasher",
+  "author": {
+    "name": "Johnny Walker"
+  },
+  "keywords": [
+    "wsl",
+    "windows-terminal",
+    "notifications",
+    "hooks",
+    "toast"
+  ]
+}

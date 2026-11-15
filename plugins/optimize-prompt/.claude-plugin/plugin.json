@@ -1,0 +1,8 @@
+{
+  "name": "optimize-prompt",
+  "version": "1.0.0",
+  "description": "Rewrites a rough prompt into a Claude Code-optimized prompt grounded in the codebase (/optimize-prompt)",
+  "author": {
+    "name": "Johnny Walker"
+  }
+}
