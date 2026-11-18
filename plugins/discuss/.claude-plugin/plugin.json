@@ -1,0 +1,8 @@
+{
+  "name": "discuss",
+  "version": "0.1.0",
+  "description": "Read-only design discussion before building: options, trade-offs, failure modes, then a hand-off prompt (/discuss)",
+  "author": {
+    "name": "Johnny Walker"
+  }
+}

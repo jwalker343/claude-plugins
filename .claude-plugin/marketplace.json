@@ -8,6 +8,11 @@
   },
   "plugins": [
     {
+      "name": "discuss",
+      "source": "./plugins/discuss",
+      "description": "Read-only design discussion before building: options, trade-offs, failure modes, then a hand-off prompt (/discuss)"
+    },
+    {
       "name": "optimize-prompt",
       "source": "./plugins/optimize-prompt",
       "description": "Rewrites a rough prompt into a Claude Code-optimized prompt grounded in the codebase (/optimize-prompt)"

@@ -7,6 +7,7 @@ Each machine installs only the plugins it needs.
 
 | Plugin | What it does |
 |--------|--------------|
+| `discuss` | Skill (`/discuss <topic>`, or auto-started when you ask to talk an approach through before building) for talking through a feature or direction before building: options, pros/cons, best practices, failure modes and blast radius, with a recommendation. Read-only (Read/Grep/Glob, WebSearch/WebFetch); stays in discussion across turns and writes a self-contained hand-off prompt for a fresh implementation agent when asked. Pinned to Opus at high effort. |
 | `optimize-prompt` | User-invoked skill (`/optimize-prompt <rough prompt>`) that rewrites a prompt into a structured, codebase-grounded Claude Code prompt and lists any session commands to run first. Read-only tools; pinned to Opus at high effort. |
 | `tmux` | `SessionStart` hook that sets the pane option `@claude_session` to the session id. The tmux binding in `my-dot-files` (Alt+Shift+F / prefix+f) uses it to run `claude --resume <id> --fork-session` in a split. Needs `jq` and `tmux`. |
 | `wsl-notify` | Alerts in Windows Terminal (WSL2) when Claude is blocked on you (permission prompt, AskUserQuestion, ExitPlanMode): title change, bell, Windows toast, optional title flasher. A softer toast + bell when a turn finishes. Config: `~/.claude/claude-wsl-notify/config.json` (see [its README](plugins/wsl-notify/README.md)). POSIX `sh`; `jq` optional; `powershell.exe` optional for the richer toast. Off WSL the toast is skipped and only title/bell escapes are emitted. |
