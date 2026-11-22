@@ -7,6 +7,7 @@ Each machine installs only the plugins it needs.
 
 | Plugin | What it does |
 |--------|--------------|
+| `adhd-style` | Output style **Pretend I Have ADHD** (pick it in `/config` → Output style, or set `"outputStyle": "adhd-style:Pretend I Have ADHD"` in settings) that shapes replies for an ADHD reader: next action first, numbered steps, state restated each turn, tangents deferred, concrete time estimates, no preamble or closers. Keeps Claude Code's coding instructions. Adapted from [ayghri/i-have-adhd](https://github.com/ayghri/i-have-adhd) (MIT). No dependencies. |
 | `discuss` | Skill (`/discuss <topic>`, or auto-started when you ask to talk an approach through before building) for talking through a feature or direction before building: options, pros/cons, best practices, failure modes and blast radius, with a recommendation. Read-only (Read/Grep/Glob, WebSearch/WebFetch); stays in discussion across turns and writes a self-contained hand-off prompt for a fresh implementation agent when asked. Pinned to Opus at high effort. |
 | `optimize-prompt` | User-invoked skill (`/optimize-prompt <rough prompt>`) that rewrites a prompt into a structured, codebase-grounded Claude Code prompt and lists any session commands to run first. Read-only tools; pinned to Opus at high effort. |
 | `tmux` | `SessionStart` hook that sets the pane option `@claude_session` to the session id. The tmux binding in `my-dot-files` (Alt+Shift+F / prefix+f) uses it to run `claude --resume <id> --fork-session` in a split. Needs `jq` and `tmux`. |

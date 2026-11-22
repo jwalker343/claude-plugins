@@ -8,6 +8,11 @@
   },
   "plugins": [
     {
+      "name": "adhd-style",
+      "source": "./plugins/adhd-style",
+      "description": "ADHD-friendly output style: next action first, numbered steps, state restated each turn, no tangents or filler (adapted from i-have-adhd)"
+    },
+    {
       "name": "discuss",
       "source": "./plugins/discuss",
       "description": "Read-only design discussion before building: options, trade-offs, failure modes, then a hand-off prompt (/discuss)"
