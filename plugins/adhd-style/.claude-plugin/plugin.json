@@ -1,6 +1,6 @@
 {
   "name": "adhd-style",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "ADHD-friendly output style: next action first, numbered steps, state restated each turn, no tangents or filler (adapted from i-have-adhd)",
   "author": {
     "name": "Johnny Walker"
